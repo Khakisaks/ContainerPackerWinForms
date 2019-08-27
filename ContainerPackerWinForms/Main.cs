@@ -33,9 +33,21 @@ namespace ContainerPackerWinForms
             txtCostingCoefficientCube.Text = CostCoefficientCube.ToString();
             txtCostingCoefficientWeight.Text = CostCoefficientWeight.ToString();
 
-            List<Container> ContainerList = new List<Container>();
-            ContainerList.Add
+            Container c1 = new Container("20ft General Purpose", 23400, 30);
+            Container c2 = new Container("40ft General Purpose", 24900, 60);
+            Container c3 = new Container("40ft General Purpose - High Cube", 24900, 70);
 
+            List<Container> ContainerList = new List<Container>();
+            ContainerList.Add(c1);
+            ContainerList.Add(c2);
+            ContainerList.Add(c3);
+
+            lstContainer.View = View.Details;
+            lstContainer.Columns.Add("ContainerID");
+            lstContainer.Columns.Add("Description");
+            lstContainer.Columns.Add("Capacity - Weight");
+            lstContainer.Columns.Add("Capacity - Cube");
+            
         }
     }
 }

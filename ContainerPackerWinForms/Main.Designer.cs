@@ -79,7 +79,6 @@
             this.btnModifyShipmentContainerPacking = new System.Windows.Forms.Button();
             this.btnAddPackagesToShipmentContainer = new System.Windows.Forms.Button();
             this.btnRemoveShipmentContainer = new System.Windows.Forms.Button();
-            this.dgvShipmentContainer = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -93,15 +92,14 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvContainer = new System.Windows.Forms.DataGridView();
-            this.dgvContainerPacking = new System.Windows.Forms.DataGridView();
+            this.lstContainer = new System.Windows.Forms.ListView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lvShipmentContainer = new System.Windows.Forms.ListView();
+            this.lvContainerPacking = new System.Windows.Forms.ListView();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainer)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContainerPacking)).BeginInit();
             this.SuspendLayout();
             // 
             // txtShipmentName
@@ -446,6 +444,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lvShipmentContainer);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.label21);
@@ -457,11 +456,10 @@
             this.groupBox4.Controls.Add(this.btnModifyShipmentContainerPacking);
             this.groupBox4.Controls.Add(this.btnAddPackagesToShipmentContainer);
             this.groupBox4.Controls.Add(this.btnRemoveShipmentContainer);
-            this.groupBox4.Controls.Add(this.dgvShipmentContainer);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(240, 317);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(798, 324);
+            this.groupBox4.Size = new System.Drawing.Size(1192, 324);
             this.groupBox4.TabIndex = 67;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Containers in Shipment :";
@@ -576,22 +574,9 @@
             this.btnRemoveShipmentContainer.Text = "Remove Container from Shipment";
             this.btnRemoveShipmentContainer.UseVisualStyleBackColor = true;
             // 
-            // dgvShipmentContainer
-            // 
-            this.dgvShipmentContainer.AllowUserToAddRows = false;
-            this.dgvShipmentContainer.AllowUserToDeleteRows = false;
-            this.dgvShipmentContainer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShipmentContainer.Location = new System.Drawing.Point(19, 55);
-            this.dgvShipmentContainer.Name = "dgvShipmentContainer";
-            this.dgvShipmentContainer.ReadOnly = true;
-            this.dgvShipmentContainer.RowHeadersWidth = 51;
-            this.dgvShipmentContainer.RowTemplate.Height = 24;
-            this.dgvShipmentContainer.Size = new System.Drawing.Size(755, 209);
-            this.dgvShipmentContainer.TabIndex = 40;
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dgvContainerPacking);
+            this.groupBox5.Controls.Add(this.lvContainerPacking);
             this.groupBox5.Controls.Add(this.txtPackageWeight);
             this.groupBox5.Controls.Add(this.chkSplitQty);
             this.groupBox5.Controls.Add(this.label36);
@@ -618,7 +603,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(598, 106);
+            this.label15.Location = new System.Drawing.Point(997, 101);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(163, 17);
             this.label15.TabIndex = 28;
@@ -628,7 +613,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(396, 106);
+            this.label14.Location = new System.Drawing.Point(795, 101);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(174, 17);
             this.label14.TabIndex = 29;
@@ -636,14 +621,14 @@
             // 
             // txtContainerCapacityCube
             // 
-            this.txtContainerCapacityCube.Location = new System.Drawing.Point(677, 123);
+            this.txtContainerCapacityCube.Location = new System.Drawing.Point(1076, 118);
             this.txtContainerCapacityCube.Name = "txtContainerCapacityCube";
             this.txtContainerCapacityCube.Size = new System.Drawing.Size(84, 22);
             this.txtContainerCapacityCube.TabIndex = 31;
             // 
             // txtContainerCapacityWeight
             // 
-            this.txtContainerCapacityWeight.Location = new System.Drawing.Point(496, 123);
+            this.txtContainerCapacityWeight.Location = new System.Drawing.Point(895, 118);
             this.txtContainerCapacityWeight.Name = "txtContainerCapacityWeight";
             this.txtContainerCapacityWeight.Size = new System.Drawing.Size(79, 22);
             this.txtContainerCapacityWeight.TabIndex = 30;
@@ -652,7 +637,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(401, 56);
+            this.label13.Location = new System.Drawing.Point(800, 51);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 17);
             this.label13.TabIndex = 27;
@@ -660,7 +645,7 @@
             // 
             // txtContainerDescription
             // 
-            this.txtContainerDescription.Location = new System.Drawing.Point(399, 81);
+            this.txtContainerDescription.Location = new System.Drawing.Point(798, 76);
             this.txtContainerDescription.Name = "txtContainerDescription";
             this.txtContainerDescription.Size = new System.Drawing.Size(362, 22);
             this.txtContainerDescription.TabIndex = 26;
@@ -668,7 +653,7 @@
             // btnCreateNewContainer
             // 
             this.btnCreateNewContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateNewContainer.Location = new System.Drawing.Point(399, 162);
+            this.btnCreateNewContainer.Location = new System.Drawing.Point(798, 162);
             this.btnCreateNewContainer.Name = "btnCreateNewContainer";
             this.btnCreateNewContainer.Size = new System.Drawing.Size(362, 26);
             this.btnCreateNewContainer.TabIndex = 25;
@@ -680,7 +665,7 @@
             this.btnAddContainerToShipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddContainerToShipment.Location = new System.Drawing.Point(9, 162);
             this.btnAddContainerToShipment.Name = "btnAddContainerToShipment";
-            this.btnAddContainerToShipment.Size = new System.Drawing.Size(368, 26);
+            this.btnAddContainerToShipment.Size = new System.Drawing.Size(765, 26);
             this.btnAddContainerToShipment.TabIndex = 2;
             this.btnAddContainerToShipment.Text = "Add Container to Shipment";
             this.btnAddContainerToShipment.UseVisualStyleBackColor = true;
@@ -718,7 +703,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvContainer);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.lstContainer);
             this.groupBox3.Controls.Add(this.label38);
             this.groupBox3.Controls.Add(this.label39);
             this.groupBox3.Controls.Add(this.label37);
@@ -730,45 +716,58 @@
             this.groupBox3.Controls.Add(this.txtContainerCapacityCube);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(240, 96);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(798, 202);
+            this.groupBox3.Size = new System.Drawing.Size(1192, 202);
             this.groupBox3.TabIndex = 66;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Container selection :";
             // 
-            // dgvContainer
+            // lstContainer
             // 
-            this.dgvContainer.AllowUserToAddRows = false;
-            this.dgvContainer.AllowUserToDeleteRows = false;
-            this.dgvContainer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContainer.Location = new System.Drawing.Point(13, 56);
-            this.dgvContainer.Name = "dgvContainer";
-            this.dgvContainer.ReadOnly = true;
-            this.dgvContainer.RowHeadersWidth = 51;
-            this.dgvContainer.RowTemplate.Height = 24;
-            this.dgvContainer.Size = new System.Drawing.Size(364, 100);
-            this.dgvContainer.TabIndex = 69;
+            this.lstContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstContainer.HideSelection = false;
+            this.lstContainer.Location = new System.Drawing.Point(9, 51);
+            this.lstContainer.Name = "lstContainer";
+            this.lstContainer.Size = new System.Drawing.Size(765, 105);
+            this.lstContainer.TabIndex = 69;
+            this.lstContainer.UseCompatibleStateImageBehavior = false;
             // 
-            // dgvContainerPacking
+            // label7
             // 
-            this.dgvContainerPacking.AllowUserToAddRows = false;
-            this.dgvContainerPacking.AllowUserToDeleteRows = false;
-            this.dgvContainerPacking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContainerPacking.Location = new System.Drawing.Point(19, 49);
-            this.dgvContainerPacking.Name = "dgvContainerPacking";
-            this.dgvContainerPacking.ReadOnly = true;
-            this.dgvContainerPacking.RowHeadersWidth = 51;
-            this.dgvContainerPacking.RowTemplate.Height = 24;
-            this.dgvContainerPacking.Size = new System.Drawing.Size(755, 161);
-            this.dgvContainerPacking.TabIndex = 69;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, -1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 17);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "Container Selection :";
+            // 
+            // lvShipmentContainer
+            // 
+            this.lvShipmentContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvShipmentContainer.HideSelection = false;
+            this.lvShipmentContainer.Location = new System.Drawing.Point(13, 65);
+            this.lvShipmentContainer.Name = "lvShipmentContainer";
+            this.lvShipmentContainer.Size = new System.Drawing.Size(1147, 194);
+            this.lvShipmentContainer.TabIndex = 70;
+            this.lvShipmentContainer.UseCompatibleStateImageBehavior = false;
+            // 
+            // lvContainerPacking
+            // 
+            this.lvContainerPacking.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvContainerPacking.HideSelection = false;
+            this.lvContainerPacking.Location = new System.Drawing.Point(23, 49);
+            this.lvContainerPacking.Name = "lvContainerPacking";
+            this.lvContainerPacking.Size = new System.Drawing.Size(719, 161);
+            this.lvContainerPacking.TabIndex = 71;
+            this.lvContainerPacking.UseCompatibleStateImageBehavior = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1841, 992);
+            this.ClientSize = new System.Drawing.Size(1510, 992);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
@@ -802,13 +801,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainer)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContainerPacking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -864,7 +860,6 @@
         private System.Windows.Forms.Button btnModifyShipmentContainerPacking;
         private System.Windows.Forms.Button btnAddPackagesToShipmentContainer;
         private System.Windows.Forms.Button btnRemoveShipmentContainer;
-        private System.Windows.Forms.DataGridView dgvShipmentContainer;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox cboDisplayUnits;
         private System.Windows.Forms.Label label5;
@@ -880,8 +875,10 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvContainerPacking;
-        private System.Windows.Forms.DataGridView dgvContainer;
+        private System.Windows.Forms.ListView lstContainer;
+        private System.Windows.Forms.ListView lvShipmentContainer;
+        private System.Windows.Forms.ListView lvContainerPacking;
+        private System.Windows.Forms.Label label7;
     }
 }
 
