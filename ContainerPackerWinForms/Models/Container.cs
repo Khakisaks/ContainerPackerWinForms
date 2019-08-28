@@ -4,18 +4,33 @@ namespace ContainerPackerWinForms
 {
     public class Container
     {
-        string ContainerID { get; set; }
-        string ContainerDescription { get; set; }
-        double CapacityWeight { get; set; }
-        double CapacityCube { get; set; }
+        #region Properties
 
-        public Container(string description, double capacityWeight, double capacityCube)
+        // Unique container ID
+        public string ContainerID { get; set; }
+
+        // Container description
+        public string ContainerDescription { get; set; }
+
+        // Container payload capacity - weight
+        public double ContainerCapacityWeight { get; set; }
+
+        // Container payload capacity - cube
+        public double ContainerCapacityCube { get; set; }
+
+        #endregion  
+
+        #region Constructor
+
+        // Default constructor
+        public Container()
         {
-            ContainerID = NewContainerID();
-            ContainerDescription = description;            
-            CapacityWeight = capacityWeight;
-            CapacityCube = capacityCube;
+            ContainerID = NewContainerID();            
         }
+
+        #endregion
+
+        #region Helper Methods
 
         // Generates a new container ID
         private string NewContainerID()
@@ -23,5 +38,6 @@ namespace ContainerPackerWinForms
             return Guid.NewGuid().ToString().Replace("-", string.Empty).Replace("=", string.Empty).Replace("+", string.Empty).Substring(0, 6);
         }
 
+        #endregion
     }
 }

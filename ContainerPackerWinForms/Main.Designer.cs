@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtShipmentName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtShipmentID = new System.Windows.Forms.TextBox();
@@ -88,18 +91,23 @@
             this.txtContainerDescription = new System.Windows.Forms.TextBox();
             this.btnCreateNewContainer = new System.Windows.Forms.Button();
             this.btnAddContainerToShipment = new System.Windows.Forms.Button();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstContainer = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
-            this.lvShipmentContainer = new System.Windows.Forms.ListView();
-            this.lvContainerPacking = new System.Windows.Forms.ListView();
+            this.dgvShipmentContainer = new System.Windows.Forms.DataGridView();
+            this.dgvContainer = new System.Windows.Forms.DataGridView();
+            this.dgvShipmentContainerPacking = new System.Windows.Forms.DataGridView();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainerPacking)).BeginInit();
             this.SuspendLayout();
             // 
             // txtShipmentName
@@ -218,14 +226,14 @@
             // 
             // txtPackingQty
             // 
-            this.txtPackingQty.Location = new System.Drawing.Point(798, 147);
+            this.txtPackingQty.Location = new System.Drawing.Point(789, 139);
             this.txtPackingQty.Name = "txtPackingQty";
             this.txtPackingQty.Size = new System.Drawing.Size(79, 22);
             this.txtPackingQty.TabIndex = 46;
             // 
             // txtPackageLength
             // 
-            this.txtPackageLength.Location = new System.Drawing.Point(798, 96);
+            this.txtPackageLength.Location = new System.Drawing.Point(789, 88);
             this.txtPackageLength.Name = "txtPackageLength";
             this.txtPackageLength.Size = new System.Drawing.Size(79, 22);
             this.txtPackageLength.TabIndex = 45;
@@ -234,7 +242,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(798, 76);
+            this.label24.Location = new System.Drawing.Point(789, 68);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(74, 17);
             this.label24.TabIndex = 44;
@@ -244,7 +252,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(798, 127);
+            this.label25.Location = new System.Drawing.Point(789, 119);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(84, 17);
             this.label25.TabIndex = 43;
@@ -254,7 +262,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(798, 29);
+            this.label26.Location = new System.Drawing.Point(789, 21);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(144, 17);
             this.label26.TabIndex = 42;
@@ -262,7 +270,7 @@
             // 
             // txtPackageDescription
             // 
-            this.txtPackageDescription.Location = new System.Drawing.Point(798, 49);
+            this.txtPackageDescription.Location = new System.Drawing.Point(789, 41);
             this.txtPackageDescription.Name = "txtPackageDescription";
             this.txtPackageDescription.Size = new System.Drawing.Size(371, 22);
             this.txtPackageDescription.TabIndex = 41;
@@ -270,7 +278,7 @@
             // btnAddPackingToContainer
             // 
             this.btnAddPackingToContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPackingToContainer.Location = new System.Drawing.Point(798, 184);
+            this.btnAddPackingToContainer.Location = new System.Drawing.Point(789, 176);
             this.btnAddPackingToContainer.Name = "btnAddPackingToContainer";
             this.btnAddPackingToContainer.Size = new System.Drawing.Size(371, 26);
             this.btnAddPackingToContainer.TabIndex = 40;
@@ -342,7 +350,7 @@
             // 
             // txtPackageHeight
             // 
-            this.txtPackageHeight.Location = new System.Drawing.Point(996, 96);
+            this.txtPackageHeight.Location = new System.Drawing.Point(987, 88);
             this.txtPackageHeight.Name = "txtPackageHeight";
             this.txtPackageHeight.Size = new System.Drawing.Size(79, 22);
             this.txtPackageHeight.TabIndex = 56;
@@ -351,7 +359,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(993, 76);
+            this.label31.Location = new System.Drawing.Point(984, 68);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(73, 17);
             this.label31.TabIndex = 55;
@@ -359,7 +367,7 @@
             // 
             // txtPackageDepth
             // 
-            this.txtPackageDepth.Location = new System.Drawing.Point(901, 96);
+            this.txtPackageDepth.Location = new System.Drawing.Point(892, 88);
             this.txtPackageDepth.Name = "txtPackageDepth";
             this.txtPackageDepth.Size = new System.Drawing.Size(79, 22);
             this.txtPackageDepth.TabIndex = 58;
@@ -368,7 +376,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(898, 76);
+            this.label35.Location = new System.Drawing.Point(889, 68);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(70, 17);
             this.label35.TabIndex = 57;
@@ -376,7 +384,7 @@
             // 
             // txtPackageWeight
             // 
-            this.txtPackageWeight.Location = new System.Drawing.Point(1093, 96);
+            this.txtPackageWeight.Location = new System.Drawing.Point(1084, 88);
             this.txtPackageWeight.Name = "txtPackageWeight";
             this.txtPackageWeight.Size = new System.Drawing.Size(79, 22);
             this.txtPackageWeight.TabIndex = 60;
@@ -385,7 +393,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(1090, 76);
+            this.label36.Location = new System.Drawing.Point(1081, 68);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(79, 17);
             this.label36.TabIndex = 59;
@@ -395,7 +403,7 @@
             // 
             this.chkSplitQty.AutoSize = true;
             this.chkSplitQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSplitQty.Location = new System.Drawing.Point(900, 146);
+            this.chkSplitQty.Location = new System.Drawing.Point(891, 138);
             this.chkSplitQty.Name = "chkSplitQty";
             this.chkSplitQty.Size = new System.Drawing.Size(83, 21);
             this.chkSplitQty.TabIndex = 61;
@@ -404,13 +412,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(240, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(798, 66);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Shipment detail :";
             // 
             // groupBox2
             // 
@@ -426,10 +434,11 @@
             // 
             // cboDisplayUnits
             // 
+            this.cboDisplayUnits.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDisplayUnits.FormattingEnabled = true;
-            this.cboDisplayUnits.Location = new System.Drawing.Point(30, 260);
+            this.cboDisplayUnits.Location = new System.Drawing.Point(51, 260);
             this.cboDisplayUnits.Name = "cboDisplayUnits";
-            this.cboDisplayUnits.Size = new System.Drawing.Size(150, 24);
+            this.cboDisplayUnits.Size = new System.Drawing.Size(129, 24);
             this.cboDisplayUnits.TabIndex = 69;
             // 
             // label5
@@ -444,7 +453,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lvShipmentContainer);
+            this.groupBox4.Controls.Add(this.label37);
+            this.groupBox4.Controls.Add(this.dgvShipmentContainer);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.label21);
@@ -456,13 +466,12 @@
             this.groupBox4.Controls.Add(this.btnModifyShipmentContainerPacking);
             this.groupBox4.Controls.Add(this.btnAddPackagesToShipmentContainer);
             this.groupBox4.Controls.Add(this.btnRemoveShipmentContainer);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(240, 317);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1192, 324);
+            this.groupBox4.Size = new System.Drawing.Size(1172, 324);
             this.groupBox4.TabIndex = 67;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Containers in Shipment :";
             // 
             // label22
             // 
@@ -576,7 +585,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.lvContainerPacking);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.dgvShipmentContainerPacking);
             this.groupBox5.Controls.Add(this.txtPackageWeight);
             this.groupBox5.Controls.Add(this.chkSplitQty);
             this.groupBox5.Controls.Add(this.label36);
@@ -591,44 +601,43 @@
             this.groupBox5.Controls.Add(this.label24);
             this.groupBox5.Controls.Add(this.txtPackageLength);
             this.groupBox5.Controls.Add(this.txtPackingQty);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(240, 659);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1192, 267);
+            this.groupBox5.Size = new System.Drawing.Size(1172, 233);
             this.groupBox5.TabIndex = 68;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Container packing :";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(997, 101);
+            this.label15.Location = new System.Drawing.Point(936, 60);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(163, 17);
+            this.label15.Size = new System.Drawing.Size(97, 17);
             this.label15.TabIndex = 28;
-            this.label15.Text = "Payload Capacity - Cube";
+            this.label15.Text = "Cube capacity";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(795, 101);
+            this.label14.Location = new System.Drawing.Point(795, 60);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(174, 17);
+            this.label14.Size = new System.Drawing.Size(145, 21);
             this.label14.TabIndex = 29;
-            this.label14.Text = "Payload Capacity - Weight";
+            this.label14.Text = "Weight capacity :";
             // 
             // txtContainerCapacityCube
             // 
-            this.txtContainerCapacityCube.Location = new System.Drawing.Point(1076, 118);
+            this.txtContainerCapacityCube.Location = new System.Drawing.Point(941, 84);
             this.txtContainerCapacityCube.Name = "txtContainerCapacityCube";
             this.txtContainerCapacityCube.Size = new System.Drawing.Size(84, 22);
             this.txtContainerCapacityCube.TabIndex = 31;
             // 
             // txtContainerCapacityWeight
             // 
-            this.txtContainerCapacityWeight.Location = new System.Drawing.Point(895, 118);
+            this.txtContainerCapacityWeight.Location = new System.Drawing.Point(798, 84);
             this.txtContainerCapacityWeight.Name = "txtContainerCapacityWeight";
             this.txtContainerCapacityWeight.Size = new System.Drawing.Size(79, 22);
             this.txtContainerCapacityWeight.TabIndex = 30;
@@ -637,7 +646,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(800, 51);
+            this.label13.Location = new System.Drawing.Point(800, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 17);
             this.label13.TabIndex = 27;
@@ -645,7 +654,7 @@
             // 
             // txtContainerDescription
             // 
-            this.txtContainerDescription.Location = new System.Drawing.Point(798, 76);
+            this.txtContainerDescription.Location = new System.Drawing.Point(798, 35);
             this.txtContainerDescription.Name = "txtContainerDescription";
             this.txtContainerDescription.Size = new System.Drawing.Size(362, 22);
             this.txtContainerDescription.TabIndex = 26;
@@ -671,43 +680,10 @@
             this.btnAddContainerToShipment.UseVisualStyleBackColor = true;
             this.btnAddContainerToShipment.Click += new System.EventHandler(this.BtnAddContainerToShipment_Click);
             // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(10, 29);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(150, 17);
-            this.label37.TabIndex = 62;
-            this.label37.Text = "Container description :";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(367, 29);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(163, 17);
-            this.label39.TabIndex = 63;
-            this.label39.Text = "Payload Capacity - Cube";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(159, 29);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(174, 17);
-            this.label38.TabIndex = 64;
-            this.label38.Text = "Payload Capacity - Weight";
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dgvContainer);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.lstContainer);
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.label39);
-            this.groupBox3.Controls.Add(this.label37);
             this.groupBox3.Controls.Add(this.btnAddContainerToShipment);
             this.groupBox3.Controls.Add(this.btnCreateNewContainer);
             this.groupBox3.Controls.Add(this.txtContainerDescription);
@@ -719,19 +695,9 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(240, 96);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1192, 202);
+            this.groupBox3.Size = new System.Drawing.Size(1172, 202);
             this.groupBox3.TabIndex = 66;
             this.groupBox3.TabStop = false;
-            // 
-            // lstContainer
-            // 
-            this.lstContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstContainer.HideSelection = false;
-            this.lstContainer.Location = new System.Drawing.Point(9, 51);
-            this.lstContainer.Name = "lstContainer";
-            this.lstContainer.Size = new System.Drawing.Size(765, 105);
-            this.lstContainer.TabIndex = 69;
-            this.lstContainer.UseCompatibleStateImageBehavior = false;
             // 
             // label7
             // 
@@ -743,31 +709,116 @@
             this.label7.TabIndex = 69;
             this.label7.Text = "Container Selection :";
             // 
-            // lvShipmentContainer
+            // dgvShipmentContainer
             // 
-            this.lvShipmentContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvShipmentContainer.HideSelection = false;
-            this.lvShipmentContainer.Location = new System.Drawing.Point(13, 65);
-            this.lvShipmentContainer.Name = "lvShipmentContainer";
-            this.lvShipmentContainer.Size = new System.Drawing.Size(1147, 194);
-            this.lvShipmentContainer.TabIndex = 70;
-            this.lvShipmentContainer.UseCompatibleStateImageBehavior = false;
+            this.dgvShipmentContainer.AllowUserToAddRows = false;
+            this.dgvShipmentContainer.AllowUserToDeleteRows = false;
+            this.dgvShipmentContainer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShipmentContainer.Location = new System.Drawing.Point(13, 64);
+            this.dgvShipmentContainer.Name = "dgvShipmentContainer";
+            this.dgvShipmentContainer.ReadOnly = true;
+            this.dgvShipmentContainer.RowHeadersWidth = 51;
+            this.dgvShipmentContainer.RowTemplate.Height = 24;
+            this.dgvShipmentContainer.Size = new System.Drawing.Size(1147, 213);
+            this.dgvShipmentContainer.TabIndex = 69;
             // 
-            // lvContainerPacking
+            // dgvContainer
             // 
-            this.lvContainerPacking.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvContainerPacking.HideSelection = false;
-            this.lvContainerPacking.Location = new System.Drawing.Point(23, 49);
-            this.lvContainerPacking.Name = "lvContainerPacking";
-            this.lvContainerPacking.Size = new System.Drawing.Size(719, 161);
-            this.lvContainerPacking.TabIndex = 71;
-            this.lvContainerPacking.UseCompatibleStateImageBehavior = false;
+            this.dgvContainer.AllowUserToAddRows = false;
+            this.dgvContainer.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContainer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvContainer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContainer.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvContainer.Location = new System.Drawing.Point(13, 21);
+            this.dgvContainer.Name = "dgvContainer";
+            this.dgvContainer.ReadOnly = true;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContainer.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvContainer.RowHeadersWidth = 51;
+            this.dgvContainer.RowTemplate.Height = 24;
+            this.dgvContainer.Size = new System.Drawing.Size(761, 135);
+            this.dgvContainer.TabIndex = 69;
+            this.dgvContainer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvContainer_CellClick);
+            // 
+            // dgvShipmentContainerPacking
+            // 
+            this.dgvShipmentContainerPacking.AllowUserToAddRows = false;
+            this.dgvShipmentContainerPacking.AllowUserToDeleteRows = false;
+            this.dgvShipmentContainerPacking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShipmentContainerPacking.Location = new System.Drawing.Point(13, 49);
+            this.dgvShipmentContainerPacking.Name = "dgvShipmentContainerPacking";
+            this.dgvShipmentContainerPacking.ReadOnly = true;
+            this.dgvShipmentContainerPacking.RowHeadersWidth = 51;
+            this.dgvShipmentContainerPacking.RowTemplate.Height = 24;
+            this.dgvShipmentContainerPacking.Size = new System.Drawing.Size(761, 161);
+            this.dgvShipmentContainerPacking.TabIndex = 69;
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(1242, 922);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(170, 27);
+            this.btnQuit.TabIndex = 72;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.BtnQuit_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 17);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Shipment details :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(149, 17);
+            this.label12.TabIndex = 70;
+            this.label12.Text = "Container packing :";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(10, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(184, 17);
+            this.label37.TabIndex = 73;
+            this.label37.Text = "Containers in shipment :";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1510, 992);
+            this.ClientSize = new System.Drawing.Size(1430, 967);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
@@ -795,8 +846,11 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Container Packer";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -805,6 +859,9 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipmentContainerPacking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -871,14 +928,15 @@
         private System.Windows.Forms.TextBox txtContainerDescription;
         private System.Windows.Forms.Button btnCreateNewContainer;
         private System.Windows.Forms.Button btnAddContainerToShipment;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView lstContainer;
-        private System.Windows.Forms.ListView lvShipmentContainer;
-        private System.Windows.Forms.ListView lvContainerPacking;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvShipmentContainer;
+        private System.Windows.Forms.DataGridView dgvContainer;
+        private System.Windows.Forms.DataGridView dgvShipmentContainerPacking;
+        private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label37;
     }
 }
 

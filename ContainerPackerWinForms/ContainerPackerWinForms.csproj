@@ -70,6 +70,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Container.cs" />
+    <Compile Include="Models\ComboboxItem.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="Models\Shipment.cs" />
     <Compile Include="Program.cs" />
