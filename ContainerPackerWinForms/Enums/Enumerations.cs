@@ -45,4 +45,23 @@ namespace ContainerPackerWinForms
         [Description("Millimeter")]
         Millimeter = 7
     }
+
+    // Container status    
+    public enum ContainerStatus
+    {        
+        [Description("Open")]
+        Open = 1,
+        [Description("Closed")]
+        Closed = 2, 
+    }
+
+    // Shipment status    
+    public enum ShipmentStatus
+    {
+        [Description("Open")]
+        Open = 1,
+        [Description("Closed")]
+        Closed = 2,
+    }
+
 }

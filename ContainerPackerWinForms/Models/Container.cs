@@ -1,4 +1,5 @@
 ﻿using System;
+using ExtensionMethods;
 
 namespace ContainerPackerWinForms
 {
@@ -8,16 +9,13 @@ namespace ContainerPackerWinForms
 
         // Unique container ID
         public string ContainerID { get; set; }
-
         // Container description
-        public string ContainerDescription { get; set; }
-
+        public string Description { get; set; }
         // Container payload capacity - weight
-        public double ContainerCapacityWeight { get; set; }
-
+        public double CapacityWeight { get; set; }
         // Container payload capacity - cube
-        public double ContainerCapacityCube { get; set; }
-
+        public double CapacityCube { get; set; }
+        
         #endregion  
 
         #region Constructor
@@ -25,17 +23,7 @@ namespace ContainerPackerWinForms
         // Default constructor
         public Container()
         {
-            ContainerID = NewContainerID();            
-        }
-
-        #endregion
-
-        #region Helper Methods
-
-        // Generates a new container ID
-        private string NewContainerID()
-        {
-            return Guid.NewGuid().ToString().Replace("-", string.Empty).Replace("=", string.Empty).Replace("+", string.Empty).Substring(0, 6);
+            ContainerID = Extension.NewID();
         }
 
         #endregion

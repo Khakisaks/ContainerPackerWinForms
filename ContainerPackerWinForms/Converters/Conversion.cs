@@ -293,7 +293,7 @@
 
                     #endregion
             }
-            dblReturn = ValueToConvert* dblConversionFactor;
+            dblReturn = ValueToConvert * dblConversionFactor;
             return dblReturn;
         }
 

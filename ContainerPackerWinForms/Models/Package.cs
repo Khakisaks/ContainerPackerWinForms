@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExtensionMethods;
 
 namespace ContainerPackerWinForms
 {
@@ -14,22 +15,30 @@ namespace ContainerPackerWinForms
         public string PackageID { get; private set; }
 
         // Package description
-        public string PackageDescription { get; set; }
+        public string Description { get; set; }
 
         // Dimensional length of package
-        public double PackageLength { get; set; }
+        public double Length { get; set; }
 
         // Dimensional depth of package
-        public double PackageDepth { get; set; }
+        public double Depth { get; set; }
 
         // Dimensional height of package
-        public double PackageHeight { get; set; }
+        public double Height { get; set; }
 
         // Dimensional weight of package
-        public double PackageWeight { get; set; }
+        public double Weight { get; set; }
 
-        // Calculated package cube
-        public double PackageCube { get; set; }
+        // The calculated cubic volume of the package based on the dimensional inputs (Length x Depth x Height)
+        //private double _Cube;
+        public double Cube
+        {
+            get
+            {
+                // Note: Base system units CM/KG
+                return (Length / 1000) * (Depth / 1000) * (Height / 1000);
+            }
+        }
 
         #endregion
 
@@ -38,18 +47,13 @@ namespace ContainerPackerWinForms
         // Default constructor
         public Package()
         {
-            PackageID = NewPackageID();
+            PackageID = Extension.NewID();
         }
 
         #endregion
 
         #region Helper Methods
 
-        // Generates a new package ID
-        private string NewPackageID()
-        {
-            return Guid.NewGuid().ToString().Replace("-", string.Empty).Replace("=", string.Empty).Replace("+", string.Empty).Substring(0, 6);
-        }
 
         #endregion
     }
